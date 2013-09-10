@@ -213,7 +213,7 @@ end
 
 def sel_args(args = {}, which_assoc = [], which_bool = [])
   sel = []
-  sel.concat args.select{|k,v| which_assoc.include? k}
+  sel.concat args.select{|k,v| which_assoc.include? k}.to_a
   sel.concat args.select{|k,v| which_bool.include?(k) && v}.map{|k,v|[k,'']}
   Hash[sel]
 end
